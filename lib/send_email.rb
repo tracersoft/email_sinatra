@@ -2,7 +2,8 @@ require 'pony'
 require File.expand_path("lib/send_email")
 
 class SendEmail
-  
+  attr_reader :email
+
   def initialize(name, email, subject, message) 
     @name = name
     @email = email
@@ -11,7 +12,7 @@ class SendEmail
   end
 
   def send
-    if Validate.not_null?(self)
+    if Validate.not_null?(self) && Validate.email_valid?(self.email)
       Pony.mail({
         :to => ENV['user_name'],
         :from => ENV['user_name'], 
@@ -34,7 +35,6 @@ class SendEmail
   def formated_message
     "Nome: #{@name} \n Email: #{@email}\n\n Mensagem: #{@message}"
   end
-
 
 end
 

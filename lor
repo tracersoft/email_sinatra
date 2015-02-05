@@ -1,0 +1,18 @@
+[31mF[0m[32m.[0m[32m.[0m[32m.[0m
+
+Failures:
+
+  1) SendEmail #send
+     [31mFailure/Error: mailer.send[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `email' for #<SendEmail:0x00000002c45368>[0m
+     [36m# ./lib/send_email.rb:14:in `send'[0m
+     [36m# ./spec/send_email_spec.rb:18:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.17227 seconds (files took 0.52016 seconds to load)
+[31m4 examples, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/send_email_spec.rb:15[0m [36m# SendEmail #send[0m
+
