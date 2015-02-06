@@ -1,5 +1,5 @@
 require 'pony'
-require File.expand_path("lib/send_email")
+require File.expand_path("lib/validate")
 
 class SendEmail
   attr_reader :email
