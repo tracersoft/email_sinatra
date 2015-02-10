@@ -8,6 +8,8 @@ class Server < Sinatra::Base
     @subject = params[:subject]
     @message = params[:message]
     SendEmail.new(@name, @email,@subject, @message).send 
+
+    redirect to(request.referrer)
   end
 end
 
